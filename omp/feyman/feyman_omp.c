@@ -91,6 +91,9 @@ int main(int argc, char **argv)
 
     printf("[input]: N = %d\n", N);
 
+    int num_threads = omp_get_max_threads();
+    printf("Number of threads: %d\n", num_threads);
+
     stepsz = sqrt((double)dim * h);
 
     if (a == i4_min(i4_min(a, b), c))
