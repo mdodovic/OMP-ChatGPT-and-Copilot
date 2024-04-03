@@ -24,7 +24,7 @@ int num_omp_threads;
 
 void single_iteration(float *result, float *temp, float *power, int row, int col, float Cap_1, float Rx_1, float Ry_1, float Rz_1, float step) {
 
-#pragma omp parallel for collapse(2) 
+#pragma omp parallel for
     for (int r = 0; r < row; r++) {
         for (int c = 0; c < col; c++) {
             float delta;
