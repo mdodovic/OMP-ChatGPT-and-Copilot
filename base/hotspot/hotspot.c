@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <omp.h> 
 
 /* maximum power density possible (say 300W for a 10mm x 10mm chip)	*/
 #define MAX_PD (3.0e6)
@@ -169,14 +170,20 @@ int main(int argc, char **argv) {
     read_input(temp, grid_rows, grid_cols, tfile);
     read_input(power, grid_rows, grid_cols, pfile);
 
+    int num_threads = omp_get_max_threads();
+    printf("Number of threads: %d\n", num_threads);
+
     printf("Start computing the transient temperature\n");
 
-    clock_t start = clock();
+    double time1, time2, elapsed;
+    time1 = omp_get_wtime();
+
     compute_tran_temp(result, sim_time, temp, power, grid_rows, grid_cols);
 
-    clock_t stop = clock();
-    unsigned long elapsed = (unsigned long)(stop - start) * 1000.0 / CLOCKS_PER_SEC;
-    printf("Time elapsed in ms: %lu", elapsed);
+    time2 = omp_get_wtime();
+    elapsed = time2 - time1;
+    printf("Time elapsed: %f seconds\n", elapsed);
+    printf("---------------------------------------\n\n");
 
     writeoutput((1 & sim_time) ? result : temp, grid_rows, grid_cols, ofile);
 
