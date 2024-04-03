@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <omp.h> 
 
 int i4_ceiling(double x)
 {
@@ -42,25 +43,6 @@ double r8_uniform_01(int *seed)
   r = (double)(*seed) * 4.656612875E-10;
 
   return r;
-}
-
-void timestamp(void)
-{
-#define TIME_SIZE 40
-
-  static char time_buffer[TIME_SIZE];
-  const struct tm *tm;
-  time_t now;
-
-  now = time(NULL);
-  tm = localtime(&now);
-
-  strftime(time_buffer, TIME_SIZE, "%d %B %Y %I:%M:%S %p", tm);
-
-  printf("%s\n", time_buffer);
-
-  return;
-#undef TIME_SIZE
 }
 
 // print na stdout upotrebiti u validaciji paralelnog resenja
@@ -104,13 +86,15 @@ int main(int arc, char **argv)
   double z;
 
   int N = atoi(argv[1]);
-  timestamp();
 
-  printf("A = %f\n", a);
-  printf("B = %f\n", b);
-  printf("C = %f\n", c);
-  printf("N = %d\n", N);
-  printf("H = %6.4f\n", h);
+  double time1, time2, elapsed;
+  time1 = omp_get_wtime();
+
+  // printf("A = %f\n", a);
+  // printf("B = %f\n", b);
+  // printf("C = %f\n", c);
+  printf("[input]: N = %d\n", N);
+  // printf("H = %6.4f\n", h);
 
   stepsz = sqrt((double)dim * h);
 
@@ -240,8 +224,11 @@ int main(int arc, char **argv)
   }
   err = sqrt(err / (double)(n_inside));
 
-  printf("\n\nRMS absolute error in solution = %e\n", err);
-  timestamp();
+  printf("[output]: RMS absolute error in solution = %e\n", err);
+  time2 = omp_get_wtime();
+  elapsed = time2 - time1;
+  printf("Time elapsed: %f seconds\n", elapsed);
+  printf("---------------------------------------\n\n");
 
   return 0;
 }
