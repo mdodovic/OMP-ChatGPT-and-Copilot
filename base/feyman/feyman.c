@@ -45,7 +45,6 @@ double r8_uniform_01(int *seed)
   return r;
 }
 
-// print na stdout upotrebiti u validaciji paralelnog resenja
 int main(int arc, char **argv)
 {
   double a = 3.0;
