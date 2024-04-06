@@ -1,19 +1,20 @@
 [input]: N = 1000
 [output]: RMS absolute error in solution = 2.171700e-02
-Time elapsed: 3.005432 seconds
+Time elapsed: 3.007869 seconds
 ---------------------------------------
 
 [input]: N = 5000
 [output]: RMS absolute error in solution = 2.127277e-02
-Time elapsed: 15.051564 seconds
+Time elapsed: 15.052897 seconds
 ---------------------------------------
 
 [input]: N = 10000
 [output]: RMS absolute error in solution = 2.109998e-02
-Time elapsed: 30.116718 seconds
+Time elapsed: 29.505106 seconds
 ---------------------------------------
 
 [input]: N = 20000
 [output]: RMS absolute error in solution = 2.102653e-02
-Time elapsed: 60.158934 seconds
+Time elapsed: 60.177608 seconds
 ---------------------------------------
+
