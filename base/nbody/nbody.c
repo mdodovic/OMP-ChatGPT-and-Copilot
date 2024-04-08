@@ -3,6 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include "timer.h"
+#include <omp.h> 
 
 #define DIM 2  /* Two-dimensional system */
 #define X 0    /* x-coordinate subscript */
@@ -18,18 +19,14 @@ struct particle_s {
    vect_t v;  /* Velocity */
 };
 
-void Usage(char* prog_name);
-void Get_args(int argc, char* argv[], int* n_p, int* n_steps_p, 
-      double* delta_t_p, int* output_freq_p, char* g_i_p);
+// void Usage(char* prog_name);
+void Get_args(int argc, char* argv[], int* n_p, int* n_steps_p, double* delta_t_p, int* output_freq_p, char* g_i_p);
 void Get_init_cond(struct particle_s curr[], int n);
 void Gen_init_cond(struct particle_s curr[], int n);
-void Output_state(double time, struct particle_s curr[], int n);
-void Compute_force(int part, vect_t forces[], struct particle_s curr[], 
-      int n);
-void Update_part(int part, vect_t forces[], struct particle_s curr[], 
-      int n, double delta_t);
-void Compute_energy(struct particle_s curr[], int n, double* kin_en_p,
-      double* pot_en_p);
+// void Output_state(double time, struct particle_s curr[], int n);
+void Compute_force(int part, vect_t forces[], struct particle_s curr[], int n);
+void Update_part(int part, vect_t forces[], struct particle_s curr[], int n, double delta_t);
+void Compute_energy(struct particle_s curr[], int n, double* kin_en_p, double* pot_en_p);
 
 int main(int argc, char* argv[]) {
    int n;                      /* Number of particles        */
@@ -53,11 +50,15 @@ int main(int argc, char* argv[]) {
    else
       Gen_init_cond(curr, n);
 
-   GET_TIME(start);
+//   GET_TIME(start);
+
+   double time1, time2, elapsed;
+   time1 = omp_get_wtime();
+
+
    Compute_energy(curr, n, &kinetic_energy, &potential_energy);
-   printf("   PE = %e, KE = %e, Total Energy = %e\n",
-         potential_energy, kinetic_energy, kinetic_energy+potential_energy);
-   Output_state(0, curr, n);
+//   printf("   PE = %e, KE = %e, Total Energy = %e\n", potential_energy, kinetic_energy, kinetic_energy+potential_energy);
+//   Output_state(0, curr, n);
    for (step = 1; step <= n_steps; step++) {
       t = step*delta_t;
       memset(forces, 0, n*sizeof(vect_t));
@@ -67,50 +68,55 @@ int main(int argc, char* argv[]) {
          Update_part(part, forces, curr, n, delta_t);
       Compute_energy(curr, n, &kinetic_energy, &potential_energy);
    }
-   Output_state(t, curr, n);
+//   Output_state(t, curr, n);
 
-   printf("   PE = %e, KE = %e, Total Energy = %e\n",
-  		 potential_energy, kinetic_energy, kinetic_energy+potential_energy);
-   
-   GET_TIME(finish);
-   printf("Elapsed time = %e seconds\n", finish-start);
+   printf("PE = %e, KE = %e, Total Energy = %e\n", potential_energy, kinetic_energy, kinetic_energy+potential_energy);
+
+   time2 = omp_get_wtime();
+   elapsed = time2 - time1;
+   printf("Time elapsed: %f seconds\n", elapsed);
+   printf("---------------------------------------\n\n");
+
+
+//   GET_TIME(finish);
+//   printf("Elapsed time = %e seconds\n", finish-start);
 
    free(curr);
    free(forces);
    return 0;
 }  /* main */
 
-void Usage(char* prog_name) {
-   fprintf(stderr, "usage: %s <number of particles> <number of timesteps>\n",
-         prog_name);
-   fprintf(stderr, "   <size of timestep> <output frequency>\n");
-   fprintf(stderr, "   <g|i>\n");
-   fprintf(stderr, "   'g': program should generate init conds\n");
-   fprintf(stderr, "   'i': program should get init conds from stdin\n");
+// void Usage(char* prog_name) {
+//    fprintf(stderr, "usage: %s <number of particles> <number of timesteps>\n",
+//          prog_name);
+//    fprintf(stderr, "   <size of timestep> <output frequency>\n");
+//    fprintf(stderr, "   <g|i>\n");
+//    fprintf(stderr, "   'g': program should generate init conds\n");
+//    fprintf(stderr, "   'i': program should get init conds from stdin\n");
     
-   exit(0);
-}  /* Usage */
+//    exit(0);
+// }  /* Usage */
 
 void Get_args(int argc, char* argv[], int* n_p, int* n_steps_p, 
       double* delta_t_p, int* output_freq_p, char* g_i_p) {
-   if (argc != 6) Usage(argv[0]);
+//   if (argc != 6) Usage(argv[0]);
    *n_p = strtol(argv[1], NULL, 10);
    *n_steps_p = strtol(argv[2], NULL, 10);
    *delta_t_p = strtod(argv[3], NULL);
    *output_freq_p = strtol(argv[4], NULL, 10);
    *g_i_p = argv[5][0];
 
-   if (*n_p <= 0 || *n_steps_p < 0 || *delta_t_p <= 0) Usage(argv[0]);
-   if (*g_i_p != 'g' && *g_i_p != 'i') Usage(argv[0]);
+//   if (*n_p <= 0 || *n_steps_p < 0 || *delta_t_p <= 0) Usage(argv[0]);
+//   if (*g_i_p != 'g' && *g_i_p != 'i') Usage(argv[0]);
 
 }  /* Get_args */
 
 void Get_init_cond(struct particle_s curr[], int n) {
    int part;
 
-   printf("For each particle, enter (in order):\n");
-   printf("   its mass, its x-coord, its y-coord, ");
-   printf("its x-velocity, its y-velocity\n");
+//   printf("For each particle, enter (in order):\n");
+//   printf("   its mass, its x-coord, its y-coord, ");
+//   printf("its x-velocity, its y-velocity\n");
    for (part = 0; part < n; part++) {
       scanf("%lf", &curr[part].m);
       scanf("%lf", &curr[part].s[X]);
@@ -139,17 +145,18 @@ void Gen_init_cond(struct particle_s curr[], int n) {
    }
 }  /* Gen_init_cond */
 
-void Output_state(double time, struct particle_s curr[], int n) {
-   int part;
-   printf("%.2f\n", time);
-   for (part = 0; part < n; part++) {
-      printf("%3d %10.3e ", part, curr[part].s[X]);
-      printf("  %10.3e ", curr[part].s[Y]);
-      printf("  %10.3e ", curr[part].v[X]);
-      printf("  %10.3e\n", curr[part].v[Y]);
-   }
-   printf("\n");
-}  /* Output_state */
+
+// void Output_state(double time, struct particle_s curr[], int n) {
+//    int part;
+//    printf("%.2f\n", time);
+//    for (part = 0; part < n; part++) {
+//       printf("%3d %10.3e ", part, curr[part].s[X]);
+//       printf("  %10.3e ", curr[part].s[Y]);
+//       printf("  %10.3e ", curr[part].v[X]);
+//       printf("  %10.3e\n", curr[part].v[Y]);
+//    }
+//    printf("\n");
+// }  /* Output_state */
 
 void Compute_force(int part, vect_t forces[], struct particle_s curr[], 
       int n) {
