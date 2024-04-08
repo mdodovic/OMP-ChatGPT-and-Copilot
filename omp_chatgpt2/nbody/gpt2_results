@@ -1,0 +1,15 @@
+Number of threads: 16
+PE = -7.207428e+36, KE = 5.420385e+38, Total Energy = 5.348311e+38
+Time elapsed: 0.015957 seconds
+---------------------------------------
+
+Number of threads: 16
+PE = -5.125277e+37, KE = 4.610595e+39, Total Energy = 4.559342e+39
+Time elapsed: 0.101286 seconds
+---------------------------------------
+
+Number of threads: 16
+PE = -6.945858e+38, KE = 5.146852e+37, Total Energy = -6.431173e+38
+Time elapsed: 6.117148 seconds
+---------------------------------------
+
