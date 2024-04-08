@@ -55,10 +55,15 @@ int main(int argc, char* argv[]) {
    for (step = 1; step <= n_steps; step++) {
       t = step*delta_t;
       memset(forces, 0, n*sizeof(vect_t));
+
+#pragma omp parallel for default(none) shared(forces, curr, n) private(part)
       for (part = 0; part < n-1; part++)
          Compute_force(part, forces, curr, n);
+
+#pragma omp parallel for
       for (part = 0; part < n; part++)
          Update_part(part, forces, curr, n, delta_t);
+
       Compute_energy(curr, n, &kinetic_energy, &potential_energy);
    }
    printf("PE = %e, KE = %e, Total Energy = %e\n", potential_energy, kinetic_energy, kinetic_energy+potential_energy);
@@ -155,12 +160,14 @@ void Compute_energy(struct particle_s curr[], int n, double* kin_en_p,
    double pe = 0.0, ke = 0.0;
    double dist, speed_sqr;
 
+#pragma omp parallel for reduction(+:ke) private(speed_sqr)
    for (i = 0; i < n; i++) {
       speed_sqr = curr[i].v[X]*curr[i].v[X] + curr[i].v[Y]*curr[i].v[Y];
       ke += curr[i].m*speed_sqr;
    }
    ke *= 0.5;
 
+#pragma omp parallel for reduction(+:pe) private(diff, dist) collapse(2)
    for (i = 0; i < n-1; i++) {
       for (j = i+1; j < n; j++) {
          diff[X] = curr[i].s[X] - curr[j].s[X];
