@@ -1,12 +1,12 @@
 PE = -7.035612e+36, KE = 1.304554e+36, Total Energy = -5.731058e+36
-Time elapsed: 0.014818 seconds
+Time elapsed: 0.015474 seconds
 ---------------------------------------
 
 PE = -4.754056e+37, KE = 1.360414e+36, Total Energy = -4.618014e+37
-Time elapsed: 0.297647 seconds
+Time elapsed: 0.301651 seconds
 ---------------------------------------
 
 PE = -6.649074e+38, KE = 2.481116e+36, Total Energy = -6.624263e+38
-Time elapsed: 29.131487 seconds
+Time elapsed: 29.653755 seconds
 ---------------------------------------
 
