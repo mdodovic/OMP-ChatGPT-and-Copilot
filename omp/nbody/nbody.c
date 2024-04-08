@@ -60,11 +60,11 @@ int main(int argc, char* argv[]) {
       t = step*delta_t;
       memset(forces, 0, n*sizeof(vect_t));
 
-#pragma omp parallel for default(none) shared(forces, curr, n) private(k, f_part_k, len, len_3, fact, mg)
+#pragma omp parallel for default(none) shared(forces, curr, n)
       for (part = 0; part < n-1; part++)
          Compute_force(part, forces, curr, n);
 
-#pragma omp parallel for default(none) shared(curr, forces, delta_t, n) private(fact)
+#pragma omp parallel for default(none) shared(curr, forces, delta_t, n)
       for (part = 0; part < n; part++)
          Update_part(part, forces, curr, n, delta_t);
 
