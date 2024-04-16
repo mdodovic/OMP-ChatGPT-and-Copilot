@@ -14,6 +14,7 @@ int prime_number(int n)
 
   total = 0;
 
+# pragma omp parallel for default(none) shared(n) private(i, j, prime) reduction(+:total) schedule(guided,2)
   for (i = 2; i <= n; i++)
   {
     prime = 1;

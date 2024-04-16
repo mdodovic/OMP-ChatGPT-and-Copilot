@@ -1,0 +1,63 @@
+PRIME TEST
+
+  Call PRIME_NUMBER to count the primes from 1 to N.
+
+         N        Pi          Time
+
+         1         0        0.000000
+         2         1        0.000000
+         4         2        0.000000
+         8         4        0.000000
+        16         6        0.000001
+        32        11        0.000002
+        64        18        0.000004
+       128        31        0.000014
+       256        54        0.000049
+       512        97        0.000177
+      1024       172        0.000621
+      2048       309        0.002239
+      4096       564        0.002267
+      8192      1028        0.004944
+     16384      1900        0.018360
+     32768      3512        0.067907
+     65536      6542        0.256174
+    131072     12251        0.955923
+
+PRIME_TEST
+  Normal end of execution.
+
+PRIME TEST
+
+  Call PRIME_NUMBER to count the primes from 1 to N.
+
+         N        Pi          Time
+
+         5         3        0.000000
+        50        15        0.000001
+       500        95        0.000029
+      5000       669        0.001969
+     50000      5133        0.149262
+    500000     41538       12.162451
+
+PRIME_TEST
+  Normal end of execution.
+
+PRIME TEST
+
+  Call PRIME_NUMBER to count the primes from 1 to N.
+
+         N        Pi          Time
+
+         1         0        0.000000
+         4         2        0.000000
+        16         6        0.000000
+        64        18        0.000001
+       256        54        0.000008
+      1024       172        0.000104
+      4096       564        0.001357
+     16384      1900        0.018372
+     65536      6542        0.253722
+
+PRIME_TEST
+  Normal end of execution.
+
