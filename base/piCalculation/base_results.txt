@@ -1,0 +1,30 @@
+Before for loop, factor = 0.000000.
+After for loop, factor = -1.000000.
+With n = 1000000 terms
+   Our estimate of pi = 3.14159165358977
+   Ref estimate of pi = 3.14159265358979
+Elapsed time: 0.00
+Before for loop, factor = 0.000000.
+After for loop, factor = -1.000000.
+With n = 10000000 terms
+   Our estimate of pi = 3.14159255358979
+   Ref estimate of pi = 3.14159265358979
+Elapsed time: 0.01
+Before for loop, factor = 0.000000.
+After for loop, factor = -1.000000.
+With n = 100000000 terms
+   Our estimate of pi = 3.14159264358933
+   Ref estimate of pi = 3.14159265358979
+Elapsed time: 0.08
+Before for loop, factor = 0.000000.
+After for loop, factor = -1.000000.
+With n = 1000000000 terms
+   Our estimate of pi = 3.14159265258805
+   Ref estimate of pi = 3.14159265358979
+Elapsed time: 0.85
+Before for loop, factor = 0.000000.
+After for loop, factor = -1.000000.
+With n = 10000000000 terms
+   Our estimate of pi = 3.14159265348835
+   Ref estimate of pi = 3.14159265358979
+Elapsed time: 8.34
