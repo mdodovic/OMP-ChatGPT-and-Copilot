@@ -55,8 +55,11 @@ int main(int argc, char* argv[]) {
    for (step = 1; step <= n_steps; step++) {
       t = step*delta_t;
       memset(forces, 0, n*sizeof(vect_t));
+
+#    pragma omp parallel for default(none) shared(n, forces, curr, delta_t) private(part)      
       for (part = 0; part < n-1; part++)
          Compute_force(part, forces, curr, n);
+#   pragma omp parallel for default(none) shared(n, forces, curr, delta_t) private(part)         
       for (part = 0; part < n; part++)
          Update_part(part, forces, curr, n, delta_t);
       Compute_energy(curr, n, &kinetic_energy, &potential_energy);
@@ -155,12 +158,14 @@ void Compute_energy(struct particle_s curr[], int n, double* kin_en_p,
    double pe = 0.0, ke = 0.0;
    double dist, speed_sqr;
 
+# pragma omp parallel for default(none) shared(n, curr) private(i, j, diff, dist, speed_sqr) reduction(+:ke)
    for (i = 0; i < n; i++) {
       speed_sqr = curr[i].v[X]*curr[i].v[X] + curr[i].v[Y]*curr[i].v[Y];
       ke += curr[i].m*speed_sqr;
    }
    ke *= 0.5;
 
+# pragma omp parallel for default(none) shared(n, curr) private(i, j, diff, dist) reduction(+:pe) collapse(2) 
    for (i = 0; i < n-1; i++) {
       for (j = i+1; j < n; j++) {
          diff[X] = curr[i].s[X] - curr[j].s[X];

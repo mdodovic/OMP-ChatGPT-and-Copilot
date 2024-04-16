@@ -1,30 +1,30 @@
 Number of threads: 6
 Start computing the transient temperature
-Time elapsed: 0.011687 seconds
+Time elapsed: 0.011078 seconds
 ---------------------------------------
 
 Number of threads: 6
 Start computing the transient temperature
-Time elapsed: 0.189198 seconds
+Time elapsed: 0.188230 seconds
 ---------------------------------------
 
 Number of threads: 6
 Start computing the transient temperature
-Time elapsed: 1.453468 seconds
+Time elapsed: 1.462956 seconds
 ---------------------------------------
 
 Number of threads: 6
 Start computing the transient temperature
-Time elapsed: 3.116115 seconds
+Time elapsed: 2.921800 seconds
 ---------------------------------------
 
 Number of threads: 6
 Start computing the transient temperature
-Time elapsed: 7.258724 seconds
+Time elapsed: 7.278377 seconds
 ---------------------------------------
 
 Number of threads: 6
 Start computing the transient temperature
-Time elapsed: 14.626037 seconds
+Time elapsed: 14.555728 seconds
 ---------------------------------------
 
