@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#
+#include <omp.h>
 
 void Usage(char* prog_name);
 
@@ -18,7 +18,8 @@ int main(int argc, char* argv[]) {
 
    printf("Before for loop, factor = %f.\n", factor);
    timer_start = omp_get_wtime();
-# 
+
+# pragma omp parallel for reduction(+:sum)
    for (i = 0; i < n; i++) {
       factor = (i % 2 == 0) ? 1.0 : -1.0; 
       sum += factor/(2*i+1);
