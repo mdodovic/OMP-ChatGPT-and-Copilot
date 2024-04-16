@@ -91,6 +91,9 @@ int main(int arc, char **argv)
 
     printf("[input]: N = %d\n", N);
 
+    int num_threads = omp_get_max_threads();
+    printf("Number of threads: %d\n", num_threads);
+
     stepsz = sqrt((double)dim * h);
 
     if (a == i4_min(i4_min(a, b), c))
@@ -114,7 +117,8 @@ int main(int arc, char **argv)
 
     err = 0.0;
     n_inside = 0;
-
+# pragma omp parallel for private(j, k, x, y, z, chk, w_exact, wt, steps, x1, x2, x3, w, ut, us, dx, dy, dz, vh, we, vs) reduction(+ \
+                                                                                                                             : err, n_inside) schedule(dynamic)
     for (i = 1; i <= ni; i++)
     {
         x = ((double)(ni - i) * (-a) + (double)(i - 1) * a) / (double)(ni - 1);

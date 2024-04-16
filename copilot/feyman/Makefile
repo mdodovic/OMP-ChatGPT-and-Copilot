@@ -2,8 +2,8 @@
 CC = gcc
 CC_FLAGS = -fopenmp -O3
 
-feyman: 
-	$(CC) $(CC_FLAGS) feyman.c -o feyman -lm
+feyman_copilot: 
+	$(CC) $(CC_FLAGS) feyman_copilot.c -o feyman_copilot -lm
 
 clean:
-	rm -f feyman
+	rm -f feyman_copilot
