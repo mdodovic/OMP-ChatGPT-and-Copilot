@@ -118,7 +118,7 @@ int main(int argc, char **argv)
     err = 0.0;
     n_inside = 0;
 
-    #pragma omp parallel for reduction(+:n_inside, err)
+    #pragma omp parallel for reduction(+:n_inside, err) schedule(dynamic)
     for (i = 1; i <= ni; i++)
     {
         x = ((double)(ni - i) * (-a) + (double)(i - 1) * a) / (double)(ni - 1);
