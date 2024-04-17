@@ -1,24 +1,24 @@
 [input]: N = 1000
-Number of threads: 6
-[output]: RMS absolute error in solution = 2.233649e-02
-Time elapsed: 0.577944 seconds
+Number of threads: 8
+[output]: RMS absolute error in solution = 2.167783e-02
+Time elapsed: 0.442630 seconds
 ---------------------------------------
 
 [input]: N = 5000
-Number of threads: 6
-[output]: RMS absolute error in solution = 2.096029e-02
-Time elapsed: 2.867161 seconds
+Number of threads: 8
+[output]: RMS absolute error in solution = 2.125921e-02
+Time elapsed: 2.203378 seconds
 ---------------------------------------
 
 [input]: N = 10000
-Number of threads: 6
-[output]: RMS absolute error in solution = 2.095414e-02
-Time elapsed: 6.085765 seconds
+Number of threads: 8
+[output]: RMS absolute error in solution = 2.100738e-02
+Time elapsed: 4.708250 seconds
 ---------------------------------------
 
 [input]: N = 20000
-Number of threads: 6
-[output]: RMS absolute error in solution = 2.098434e-02
-Time elapsed: 13.272459 seconds
+Number of threads: 8
+[output]: RMS absolute error in solution = 2.097008e-02
+Time elapsed: 10.781609 seconds
 ---------------------------------------
 
