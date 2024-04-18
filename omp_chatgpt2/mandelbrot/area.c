@@ -116,7 +116,7 @@ int main(int argc, char *argv[]) {
   printf("Area of Mandelbrot set = %12.8f +/- %12.8f\n", area, error);
 
   elapsed_time = timer_end - timer_start;
-  printf("Elapsed time: %.2f\n", elapsed_time);
+  printf("Elapsed time: %.6f\n", elapsed_time);
 
   return 0;
 }

@@ -207,7 +207,7 @@ int main(int argc, char *argv[]){
     //     }
     // }
 
-    #pragma omp parallel for schedule(dynamic) reduction(+:numoutside)
+    #pragma omp parallel for default(none) shared(npoints, maxiter)  private(i, j, c, z, iter, ztemp) schedule(dynamic) reduction(+:numoutside)
     for (int i = 0; i < npoints; i++) {
         for (int j = 0; j < npoints; j++) {
             //complex c;
@@ -242,7 +242,7 @@ int main(int argc, char *argv[]){
   printf("Area of Mandlebrot set = %12.8f +/- %12.8f\n",area,error);
 
   elapsed_time = timer_end - timer_start;
-  printf("Elapsed time: %.2f\n", elapsed_time);
+  printf("Elapsed time: %.6f\n", elapsed_time);
 
   return 0;
 }
