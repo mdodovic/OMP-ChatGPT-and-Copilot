@@ -1,0 +1,9 @@
+-Timing in Seconds: min=0.004287, max=0.004818, avg=0.004621
+Elapsed time: 0.004621
+Last Value: z[9999999]=7.000000
+-Timing in Seconds: min=0.041324, max=0.050836, avg=0.047531
+Elapsed time: 0.047531
+Last Value: z[99999999]=7.000000
+-Timing in Seconds: min=0.402530, max=0.492406, avg=0.462089
+Elapsed time: 0.462089
+Last Value: z[999999999]=7.000000
