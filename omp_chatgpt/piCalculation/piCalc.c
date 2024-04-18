@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
    printf("With n = %lld terms\n", n);
    printf("   Our estimate of pi = %.14f\n", sum);
    printf("   Ref estimate of pi = %.14f\n", 4.0*atan(1.0));
-   printf("Elapsed time: %.2f\n", elapsed_time);
+   printf("Elapsed time: %.6f\n", elapsed_time);
    printf("Max threads: %d\n", omp_get_max_threads());
    return 0;
 }

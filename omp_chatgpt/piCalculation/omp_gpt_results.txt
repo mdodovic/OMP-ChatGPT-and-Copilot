@@ -1,35 +1,35 @@
 Before for loop, factor = 0.000000.
 After for loop, factor = -1.000000.
 With n = 1000000 terms
-   Our estimate of pi = 3.14159165358975
+   Our estimate of pi = 3.14159165358973
    Ref estimate of pi = 3.14159265358979
-Elapsed time: 0.00
-Max threads: 6
+Elapsed time: 0.001035
+Max threads: 8
 Before for loop, factor = 0.000000.
-After for loop, factor = 1.000000.
+After for loop, factor = -1.000000.
 With n = 10000000 terms
-   Our estimate of pi = 3.14159255358985
+   Our estimate of pi = 3.14159255358983
    Ref estimate of pi = 3.14159265358979
-Elapsed time: 0.00
-Max threads: 6
+Elapsed time: 0.004460
+Max threads: 8
 Before for loop, factor = 0.000000.
 After for loop, factor = -1.000000.
 With n = 100000000 terms
-   Our estimate of pi = 3.14159264358981
+   Our estimate of pi = 3.14159264358988
    Ref estimate of pi = 3.14159265358979
-Elapsed time: 0.02
-Max threads: 6
+Elapsed time: 0.015371
+Max threads: 8
 Before for loop, factor = 0.000000.
 After for loop, factor = -1.000000.
 With n = 1000000000 terms
-   Our estimate of pi = 3.14159265258897
+   Our estimate of pi = 3.14159265258932
    Ref estimate of pi = 3.14159265358979
-Elapsed time: 0.15
-Max threads: 6
+Elapsed time: 0.114507
+Max threads: 8
 Before for loop, factor = 0.000000.
-After for loop, factor = 1.000000.
+After for loop, factor = -1.000000.
 With n = 10000000000 terms
-   Our estimate of pi = 3.14159265348795
+   Our estimate of pi = 3.14159265348821
    Ref estimate of pi = 3.14159265358979
-Elapsed time: 1.47
-Max threads: 6
+Elapsed time: 1.139511
+Max threads: 8
