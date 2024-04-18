@@ -1,12 +1,12 @@
-PE = -7.677948e+36, KE = 4.640183e+36, Total Energy = -3.037765e+36
-Time elapsed: 0.014128 seconds
+PE = -8.420116e+36, KE = 9.289092e+36, Total Energy = 8.689765e+35
+Time elapsed: 0.013311 seconds
 ---------------------------------------
 
-PE = -5.252209e+37, KE = 1.687523e+37, Total Energy = -3.564687e+37
-Time elapsed: 0.104398 seconds
+PE = -5.138934e+37, KE = 2.331075e+37, Total Energy = -2.807860e+37
+Time elapsed: 0.097058 seconds
 ---------------------------------------
 
-PE = -6.925478e+38, KE = 4.047793e+37, Total Energy = -6.520698e+38
-Time elapsed: 8.171227 seconds
+PE = -6.969916e+38, KE = 5.001615e+37, Total Energy = -6.469755e+38
+Time elapsed: 6.497088 seconds
 ---------------------------------------
 

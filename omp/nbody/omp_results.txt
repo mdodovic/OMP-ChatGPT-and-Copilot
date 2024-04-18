@@ -1,15 +1,15 @@
-Number of threads: 6
-PE = -7.624079e+36, KE = 2.536683e+36, Total Energy = -5.087396e+36
-Time elapsed: 0.012606 seconds
+Number of threads: 8
+PE = -7.316648e+36, KE = 9.356846e+36, Total Energy = 2.040198e+36
+Time elapsed: 0.016152 seconds
 ---------------------------------------
 
-Number of threads: 6
-PE = -5.216745e+37, KE = 2.745314e+37, Total Energy = -2.471431e+37
-Time elapsed: 0.104658 seconds
+Number of threads: 8
+PE = -5.168497e+37, KE = 1.033819e+37, Total Energy = -4.134679e+37
+Time elapsed: 0.095550 seconds
 ---------------------------------------
 
-Number of threads: 6
-PE = -6.911650e+38, KE = 4.100616e+37, Total Energy = -6.501589e+38
-Time elapsed: 8.153251 seconds
+Number of threads: 8
+PE = -6.932111e+38, KE = 5.061672e+37, Total Energy = -6.425944e+38
+Time elapsed: 6.683801 seconds
 ---------------------------------------
 

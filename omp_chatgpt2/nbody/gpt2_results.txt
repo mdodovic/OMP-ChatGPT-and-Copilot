@@ -1,0 +1,15 @@
+Number of threads: 8
+PE = -7.509347e+36, KE = 5.038951e+37, Total Energy = 4.288017e+37
+Time elapsed: 0.014646 seconds
+---------------------------------------
+
+Number of threads: 8
+PE = -5.176143e+37, KE = 1.497021e+37, Total Energy = -3.679122e+37
+Time elapsed: 0.096321 seconds
+---------------------------------------
+
+Number of threads: 8
+PE = -6.931694e+38, KE = 6.958059e+37, Total Energy = -6.235888e+38
+Time elapsed: 6.808220 seconds
+---------------------------------------
+
