@@ -1,36 +1,9 @@
-# Makefile for the molecular dynamics code
+# C compiler
+CC = gcc
+CC_FLAGS = -fopenmp -O2
 
-#
-# C compiler and options for GNU 
-#
-CC=     gcc -O3 -fopenmp 
-LIB=	-lm
+molDyn: 
+	$(CC) $(CC_FLAGS) molDyn.c -o molDyn -lm 
 
-#
-# Object files
-#
-OBJ=    main.o \
-	dfill.o \
-	domove.o \
-        dscal.o \
-	fcc.o \
-	forces.o \
-	mkekin.o \
-	mxwell.o \
-	prnout.o \
-	velavg.o
-
-#
-# Compile
-#
-md:	$(OBJ)
-	$(CC) -o $@ $(OBJ) $(LIB)
-
-.c.o:
-	$(CC) -c $<
-
-#
-# Clean out object files and the executable.
-#
 clean:
-	rm *.o md
+	rm -f molDyn
