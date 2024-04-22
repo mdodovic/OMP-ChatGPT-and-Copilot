@@ -68,7 +68,8 @@ void basicSgemm( char transa, char transb, int m, int n, int k, float alpha, con
     std::cerr << "unsupported value of 'transb'" << std::endl;
     return;
   }
-  
+
+# pragma omp parallel for default(none) shared(m, n, k, A, B, C, beta, alpha, ldc, lda, ldb) collapse(2)
   for (int mm = 0; mm < m; ++mm) {
     for (int nn = 0; nn < n; ++nn) {
       float c = 0.0f;
@@ -112,7 +113,7 @@ int main (int argc, char *argv[]) {
   writeColMajorMatrixFile(argv[3], matArow, matBcol, matC); 
 
   elapsed_time = timer_end - timer_start;
-  printf("Elapsed time: %.2f\n", elapsed_time);
+  printf("Elapsed time: %.6f\n", elapsed_time);
 
   return 0;
 }

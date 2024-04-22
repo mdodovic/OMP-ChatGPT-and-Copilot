@@ -188,7 +188,7 @@ int main (int argc, char *argv[]) {
   writeColMajorMatrixFile(argv[3], matArow, matBcol, matC); 
 
   elapsed_time = timer_end - timer_start;
-  printf("Elapsed time: %.2f\n", elapsed_time);
+  printf("Elapsed time: %.6f\n", elapsed_time);
 
   return 0;
 }

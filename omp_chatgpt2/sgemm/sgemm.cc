@@ -1,60 +1,60 @@
-#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/time.h>
-#include <malloc.h>
-#include <vector>
-#include <iostream>
-#include <fstream>
+// #include <stdio.h>
+// #include <math.h>
+// #include <stdlib.h>
+// #include <string.h>
+// #include <sys/time.h>
+// #include <malloc.h>
+// #include <vector>
+// #include <iostream>
+// #include <fstream>
 
-#include <omp.h>
+// #include <omp.h>
 
-bool readColMajorMatrixFile(const char *fn, int &nr_row, int &nr_col, std::vector<float> &v)
-{
-    std::cerr << "Opening file:" << fn << std::endl;
-    std::fstream f(fn, std::fstream::in);
-    if (!f.good())
-    {
-        return false;
-    }
+// bool readColMajorMatrixFile(const char *fn, int &nr_row, int &nr_col, std::vector<float> &v)
+// {
+//     std::cerr << "Opening file:" << fn << std::endl;
+//     std::fstream f(fn, std::fstream::in);
+//     if (!f.good())
+//     {
+//         return false;
+//     }
 
-    // Read # of rows and cols
-    f >> nr_row;
-    f >> nr_col;
+//     // Read # of rows and cols
+//     f >> nr_row;
+//     f >> nr_col;
 
-    float data;
-    std::cerr << "Matrix dimension: " << nr_row << "x" << nr_col << std::endl;
-    while (f.good())
-    {
-        f >> data;
-        v.push_back(data);
-    }
-    v.pop_back(); // remove the duplicated last element
-    return true;
-}
+//     float data;
+//     std::cerr << "Matrix dimension: " << nr_row << "x" << nr_col << std::endl;
+//     while (f.good())
+//     {
+//         f >> data;
+//         v.push_back(data);
+//     }
+//     v.pop_back(); // remove the duplicated last element
+//     return true;
+// }
 
-bool writeColMajorMatrixFile(const char *fn, int nr_row, int nr_col, std::vector<float> &v)
-{
-    std::cerr << "Opening file:" << fn << " for write." << std::endl;
-    std::fstream f(fn, std::fstream::out);
-    if (!f.good())
-    {
-        return false;
-    }
+// bool writeColMajorMatrixFile(const char *fn, int nr_row, int nr_col, std::vector<float> &v)
+// {
+//     std::cerr << "Opening file:" << fn << " for write." << std::endl;
+//     std::fstream f(fn, std::fstream::out);
+//     if (!f.good())
+//     {
+//         return false;
+//     }
 
-    // Read # of rows and cols
-    f << nr_row << " " << nr_col << " ";
+//     // Read # of rows and cols
+//     f << nr_row << " " << nr_col << " ";
 
-    float data;
-    std::cerr << "Matrix dimension: " << nr_row << "x" << nr_col << std::endl;
-    for (int i = 0; i < v.size(); ++i)
-    {
-        f << v[i] << ' ';
-    }
-    f << "\n";
-    return true;
-}
+//     float data;
+//     std::cerr << "Matrix dimension: " << nr_row << "x" << nr_col << std::endl;
+//     for (int i = 0; i < v.size(); ++i)
+//     {
+//         f << v[i] << ' ';
+//     }
+//     f << "\n";
+//     return true;
+// }
 
 /* 
  * Base C implementation of MM
@@ -251,7 +251,7 @@ int main(int argc, char *argv[])
     writeColMajorMatrixFile(argv[3], matArow, matBcol, matC);
 
     elapsed_time = timer_end - timer_start;
-    printf("Elapsed time: %.2f\n", elapsed_time);
+    printf("Elapsed time: %.6f\n", elapsed_time);
 
     return 0;
 }
