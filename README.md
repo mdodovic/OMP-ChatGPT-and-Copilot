@@ -1,6 +1,6 @@
 # OpenMP-based code parallelization using ChatGPT and Github Copilot
 
-This repository contains code for evaluating the use of ChatGPT and GitHub Copilot for OpenMP-based code parallelization. It includes nine mini-applications, each parallelized manually, using ChatGPT, and using GitHub Copilot. 
+This repository contains code for evaluating the use of ChatGPT and GitHub Copilot for OpenMP-based code parallelization. It includes nine mini-applications, each parallelized manually, using ChatGPT, and using GitHub Copilot. <!-- This code and data are used for the experiments presented in the paper titled: "An Assessment of Large Language Models for OpenMP-based Code Parallelization: a User Perspective". -->
 
 
 ### Overview
@@ -40,7 +40,7 @@ The following references provide the original benchmark applications and code re
 
 ### Directory Structure
 
-<!-- This repository is organized into directories that contain different versions of the mini-applications. These versions include a sequential baseline, manually parallelized code, and versions parallelized using LLMs: ChatGPT and GitHub Copilot. Below is a breakdown of the directory structure. -->
+This repository is organized into directories that contain different versions of the mini-applications. These versions include a sequential baseline, manually parallelized code, and versions parallelized using LLMs: ChatGPT and GitHub Copilot. Below is a breakdown of the directory structure.
 
 ##### base/ 
 Contains the non-parallelized, sequential version of each mini-application. These are the baseline applications used for comparison.
@@ -56,6 +56,8 @@ Contains OpenMP-parallelized versions of the applications produced using ChatGPT
 
 ##### copilot/
 Contains OpenMP-parallelized versions of the applications produced using GitHub Copilot. The applications were parallelized based on suggestions from Copilot within Visual Studio Code.
+
+<!-- HERE: YOU CAN CITE THIS PAPER  -->
 
 ### License
 This project is licensed under the GNU General Public License v3.0.
