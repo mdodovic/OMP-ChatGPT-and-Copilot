@@ -57,6 +57,9 @@ Contains OpenMP-parallelized versions of the applications produced using ChatGPT
 ##### copilot/
 Contains OpenMP-parallelized versions of the applications produced using GitHub Copilot. The applications were parallelized based on suggestions from Copilot within Visual Studio Code.
 
+##### results/
+Contains the output data from the experiments, including performance plots and Excel sheets with results. 
+
 <!-- 
 ### Citation
 You can cite this paper as:
