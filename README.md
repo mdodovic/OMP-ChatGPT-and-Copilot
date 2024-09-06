@@ -1,6 +1,6 @@
 # OpenMP-based code parallelization using ChatGPT and Github Copilot
 
-This repository contains code for evaluating the use of ChatGPT and GitHub Copilot for OpenMP-based code parallelization. It includes nine mini-applications, each parallelized manually, using ChatGPT, and using GitHub Copilot. <!-- This code and data are used for the experiments presented in the paper titled: "An Assessment of Large Language Models for OpenMP-based Code Parallelization: a User Perspective". -->
+This repository contains code for evaluating the use of ChatGPT and GitHub Copilot for OpenMP-based code parallelization. It includes nine mini-applications, each parallelized manually, using ChatGPT, and using GitHub Copilot. <!-- This code and data are used for the experiments presented in the paper titled: ["..."](...). -->
 
 
 ### Overview
@@ -57,7 +57,13 @@ Contains OpenMP-parallelized versions of the applications produced using ChatGPT
 ##### copilot/
 Contains OpenMP-parallelized versions of the applications produced using GitHub Copilot. The applications were parallelized based on suggestions from Copilot within Visual Studio Code.
 
-<!-- HERE: YOU CAN CITE THIS PAPER  -->
+<!-- 
+### Citation
+You can cite this paper as:
+... 
+with the following BibTeX code:
+...
+-->
 
 ### License
 This project is licensed under the GNU General Public License v3.0.
