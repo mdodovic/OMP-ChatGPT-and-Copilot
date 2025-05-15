@@ -60,13 +60,23 @@ Contains OpenMP-parallelized versions of the applications produced using GitHub 
 ##### results/
 Contains the output data from the experiments, including performance plots and Excel sheets with results. 
 
-<!-- 
 ### Citation
 You can cite this paper as:
-... 
+```
+Mišić, M., Dodović, M. An assessment of large language models for OpenMP-based code parallelization: a user perspective. J Big Data 11, 161 (2024). https://doi.org/10.1186/s40537-024-01019-z
+```
 with the following BibTeX code:
-...
--->
-
+```
+@article{mivsic2024assessment,
+  title={An assessment of large language models for OpenMP-based code parallelization: a user perspective},
+  author={Mi{\v{s}}i{\'c}, Marko and Dodovi{\'c}, Matija},
+  journal={Journal of Big Data},
+  volume={11},
+  number={1},
+  pages={161},
+  year={2024},
+  publisher={Springer}
+}
+```
 ### License
 This project is licensed under the GNU General Public License v3.0.
