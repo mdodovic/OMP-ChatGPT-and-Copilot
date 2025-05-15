@@ -67,9 +67,9 @@ Mišić, M., Dodović, M. An assessment of large language models for OpenMP-base
 ```
 with the following BibTeX code:
 ```
-@article{mivsic2024assessment,
+@article{misic2024assessment,
   title={An assessment of large language models for OpenMP-based code parallelization: a user perspective},
-  author={Misic, Marko and Dodovic, Matija},
+  author={Mišić, Marko and Dodović, Matija},
   journal={Journal of Big Data},
   volume={11},
   number={1},
