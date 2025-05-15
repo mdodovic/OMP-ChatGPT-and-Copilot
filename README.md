@@ -69,7 +69,7 @@ with the following BibTeX code:
 ```
 @article{mivsic2024assessment,
   title={An assessment of large language models for OpenMP-based code parallelization: a user perspective},
-  author={Micic, Marko and Dodovic, Matija},
+  author={Misic, Marko and Dodovic, Matija},
   journal={Journal of Big Data},
   volume={11},
   number={1},
