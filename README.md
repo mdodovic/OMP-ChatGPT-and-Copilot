@@ -1,6 +1,6 @@
 # OpenMP-based code parallelization using ChatGPT and Github Copilot
 
-This repository contains code for evaluating the use of ChatGPT and GitHub Copilot for OpenMP-based code parallelization. It includes nine mini-applications, each parallelized manually, using ChatGPT, and using GitHub Copilot. <!-- This code and data are used for the experiments presented in the paper titled: ["..."](...). -->
+This repository contains code for evaluating the use of ChatGPT and GitHub Copilot for OpenMP-based code parallelization. It includes nine mini-applications, each parallelized manually, using ChatGPT, and using GitHub Copilot. This code and data are used for the experiments presented in the paper titled: [An assessment of large language models for OpenMP-based code parallelization: a user perspective](https://link.springer.com/article/10.1186/s40537-024-01019-z).
 
 
 ### Overview
@@ -69,7 +69,7 @@ with the following BibTeX code:
 ```
 @article{mivsic2024assessment,
   title={An assessment of large language models for OpenMP-based code parallelization: a user perspective},
-  author={Mi{\v{s}}i{\'c}, Marko and Dodovi{\'c}, Matija},
+  author={Micic, Marko and Dodovic, Matija},
   journal={Journal of Big Data},
   volume={11},
   number={1},
